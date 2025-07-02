@@ -31,14 +31,11 @@ const App: React.FC = () => {
         setStartDate={setStartDate}
         setEndDate={setEndDate}
       />
-      {schedule.length > 0 ? (
+           {schedule.length > 0 ? (
         <ScheduleDisplay schedule={schedule} />
       ) : (
-        // *****************************************************************
-        // ВАЖЛИВО: Переконайтеся, що тут немає зайвої круглої дужки перед `}`
-        // *****************************************************************
         <p className="no-schedule-message">Оберіть діапазон дат, щоб побачити розклад.</p>
-      )}
+      )} {/* <--- Ось цей рядок, видаліть ) */}
     </div>
   );
 };

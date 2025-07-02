@@ -1,25 +1,14 @@
+// tsconfig.node.json
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2023",
-    "lib": ["ES2023"],
-    "module": "ESNext",
+    "composite": true,              // Дозволяє використовувати цей проект як частину композитного проекту
     "skipLibCheck": true,
-
-    /* Bundler mode */
+    "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
+    "allowSyntheticDefaultImports": true, // Потрібен для імпортів у vite.config.ts
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "isolatedModules": true,        // Також важливо для Vite конфігурації
+    // "jsx": "react-jsx" - зазвичай не потрібен тут, якщо vite.config.ts не містить JSX
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts"] // Включати лише vite.config.ts
 }

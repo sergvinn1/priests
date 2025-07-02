@@ -1,28 +1,32 @@
+// tsconfig.app.json
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "incremental": true,
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "target": "ES2020",             // Цільова версія JavaScript
+    "useDefineForClassFields": true, // Використовувати defineProperty для полів класу (потрібно для сучасних React компонентів)
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Бібліотеки, які доступні в глобальній області видимості
+    "module": "ESNext",             // Система модулів (ESM для сучасних браузерів)
+    "skipLibCheck": true,           // Пропускати перевірку файлів оголошень бібліотек (для прискорення)
 
-    /* Bundler mode */
+    /* Bundler mode (рекомендовано Vite) */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "isolatedModules": true,        // Кожен файл вважається окремим модулем (добре для Vite)
+    "noEmit": true,                 // Не генерувати JavaScript файли (Vite займеться цим)
+    "jsx": "react-jsx",             // JSX синтаксис для React
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    // "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    // "noUncheckedSideEffectImports": true
+    /* Essential for date-fns and other libraries with mixed exports */
+    "esModuleInterop": true,                // Дозволяє використовувати "import x from 'y'" для CommonJS модулів
+    "allowSyntheticDefaultImports": true,   // Дозволяє синтетичні default імпорти
+
+    /* Verbatim Module Syntax (важливо для "import type") */
+    "verbatimModuleSyntax": true,   // Забезпечує коректну поведінку import type та export type
+
+    /* Linting (строгість перевірок) */
+    "strict": true,                 // Включає всі строгі перевірки типів
+    "noUnusedLocals": true,         // Попереджати про невикористані локальні змінні
+    "noUnusedParameters": true,     // Попереджати про невикористані параметри функції
+    "noFallthroughCasesInSwitch": true // Попереджати про провали в switch-операторах
   },
-  "include": ["src"]
+  "include": ["src"] // Включати всі файли з папки src для компіляції
 }
