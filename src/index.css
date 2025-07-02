@@ -1,0 +1,168 @@
+/* src/index.css */
+
+/* Базові стилі */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Сучасний шрифт */
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Світло-сірий фон */
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px; /* Максимальна ширина контейнера */
+  margin: 0 auto; /* Центрування */
+  padding: 20px; /* Внутрішні відступи */
+}
+
+/* Стілі для Header */
+.header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.header-title {
+  font-size: 2.8rem; /* Великий заголовок */
+  font-weight: 700; /* Жирний */
+  color: #1a237e; /* Глибокий синій */
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  color: #546e7a; /* Сіро-синій */
+}
+
+/* Стілі для DateRangePicker */
+.date-picker-container {
+  display: flex;
+  flex-direction: column; /* За замовчуванням стовпцем на мобільних */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Відстань між елементами */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px; /* Більш заокруглені кути */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* М'яка тінь */
+}
+
+@media (min-width: 768px) {
+  .date-picker-container {
+    flex-direction: row; /* На десктопах рядком */
+  }
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-label {
+  color: #3f51b5; /* Середній синій */
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.date-input {
+  padding: 10px 15px;
+  border: 1px solid #c5cae9; /* Світло-синя рамка */
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-input:focus {
+  border-color: #3f51b5; /* Синя рамка при фокусі */
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.3); /* Синє сяйво */
+}
+
+/* Стілі для повідомлення "No Schedule Message" */
+.no-schedule-message {
+  text-align: center;
+  color: #616161; /* Темно-сірий */
+  margin-top: 50px;
+  font-size: 1.2rem;
+  padding: 20px;
+  background-color: #fff3e0; /* Світло-помаранчевий фон */
+  border-left: 5px solid #ff9800; /* Помаранчева смуга */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Стілі для ScheduleDisplay */
+.schedule-display-container {
+  margin-top: 40px;
+}
+
+.week-schedule-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.week-schedule-card:hover {
+  transform: translateY(-5px); /* Невеликий ефект підняття при наведенні */
+}
+
+.week-title {
+  font-size: 1.8rem; /* 28px */
+  font-weight: 700;
+  color: #3f51b5; /* Середній синій */
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.priest-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* За замовчуванням одна колонка */
+  gap: 30px; /* Відстань між картками */
+}
+
+@media (min-width: 768px) {
+  .priest-cards-grid {
+    grid-template-columns: repeat(3, 1fr); /* На десктопах 3 колонки */
+  }
+}
+
+/* Стілі для PriestCard */
+.priest-card {
+  border: 1px solid #9fa8da; /* Синьо-фіолетова рамка */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8eaf6; /* Дуже світло-синій фон */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.priest-card:hover {
+  background-color: #c5cae9; /* Трохи темніший фон при наведенні */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.priest-card-title {
+  font-size: 1.3rem; /* 20.8px */
+  font-weight: 600;
+  color: #283593; /* Темно-синій */
+  margin-bottom: 10px;
+}
+
+.priest-card-name {
+  font-size: 1.1rem; /* 17.6px */
+  color: #424242; /* Темно-сірий */
+  font-weight: 500;
+}
